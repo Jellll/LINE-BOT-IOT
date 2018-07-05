@@ -36,7 +36,7 @@ if (!is_null($events['events'])) {
 		
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
                         //if($text=="สวัสดี"){
-			if(strstr($text,"สวัส")){
+			if(strstr($text,"ดี")){
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',

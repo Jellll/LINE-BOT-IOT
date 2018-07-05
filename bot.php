@@ -26,7 +26,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
-			$Topic = "NodeMCU" ;
+			$Topic = "NodeMCU1" ;
 			getMqttfromlineMsg($Topic,$text);//เรียกฟังชั่นที่ pub.php
 			// Make a POST Request to Messaging API to reply to sender
 			

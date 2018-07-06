@@ -70,10 +70,9 @@ void send_json(String data){
   StaticJsonBuffer<300> JSONbuffer;   //Declaring static JSON buffer
     JsonObject& JSONencoder = JSONbuffer.createObject(); 
     
-    String  NodeMCU1;
+
     JSONencoder["ESP"] = data;
-    JSONencoder["ID"] = NodeMCU1;
-    
+  
     
  
     JsonArray& values = JSONencoder.createNestedArray("values"); //JSON array

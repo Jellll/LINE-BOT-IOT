@@ -85,7 +85,7 @@ void send_json(String data){
     char JSONmessageBuffer[300];
     JSONencoder.prettyPrintTo(JSONmessageBuffer, sizeof(JSONmessageBuffer));
     Serial.println(JSONmessageBuffer);
-    Serial.println(JSONencoder["ID"]);
+   
     HTTPClient http;    //Declare object of class HTTPClient
  
     http.begin(host);      //Specify request destination

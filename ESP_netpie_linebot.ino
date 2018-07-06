@@ -69,8 +69,12 @@ Serial.println("WiFi connected");
 void send_json(String data){
   StaticJsonBuffer<300> JSONbuffer;   //Declaring static JSON buffer
     JsonObject& JSONencoder = JSONbuffer.createObject(); 
- 
+    
+    String ID = NodeMCU1;
     JSONencoder["ESP"] = data;
+    JSONencoder["ID"] = ID;
+    
+    
  
     JsonArray& values = JSONencoder.createNestedArray("values"); //JSON array
     values.add(20); //Add value to array

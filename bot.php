@@ -9,8 +9,13 @@ $access_token = '3yPQxnFy4p11esHXRUKcPAkGeBt0uwSbgSk/nSK0JBhUQM5icUI19j4LGT4LHjU
 $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['ESP'])) {
-	$id = $events['ID']
-	send_LINE($id.':'.$events['ESP']);// เรียกฟังชั่นที่ Line.php
+	if (!is_null($events['ID'])) {
+		$id = $events['ID']
+		send_LINE($id.':'.$events['ESP']);// เรียกฟังชั่นที่ Line.php
+	}else
+	{
+		send_LINE($events['ESP']);// เรียกฟังชั่นที่ Line.php
+	}
 		
 	echo "OK";
 	}

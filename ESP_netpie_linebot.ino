@@ -70,9 +70,9 @@ void send_json(String data){
   StaticJsonBuffer<300> JSONbuffer;   //Declaring static JSON buffer
     JsonObject& JSONencoder = JSONbuffer.createObject(); 
     
-    String ID = NodeMCU1;
+    String  NodeMCU1;
     JSONencoder["ESP"] = data;
-    JSONencoder["ID"] = ID;
+    JSONencoder["ID"] = NodeMCU1;
     
     
  
@@ -85,7 +85,7 @@ void send_json(String data){
     char JSONmessageBuffer[300];
     JSONencoder.prettyPrintTo(JSONmessageBuffer, sizeof(JSONmessageBuffer));
     Serial.println(JSONmessageBuffer);
- 
+    Serial.println(JSONencoder["ID"]);
     HTTPClient http;    //Declare object of class HTTPClient
  
     http.begin(host);      //Specify request destination
